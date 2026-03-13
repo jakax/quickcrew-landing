@@ -4,7 +4,7 @@ import Container from "@/components/ui/Container";
 
 export default function Hero() {
   return (
-    <section className="quickcrew-hero-bg relative overflow-hidden">
+    <section className="relative overflow-hidden py-24 bg-[linear-gradient(180deg,#EAF9FB_0%,#CDEFF3_40%,#B7E7ED_60%,#EAF9FB_100%)]">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[-120px] top-[80px] h-[280px] w-[280px] rounded-full bg-[#22B8C4]/20 blur-3xl" />
         <div className="absolute right-[-100px] top-[140px] h-[320px] w-[320px] rounded-full bg-[#47B872]/18 blur-3xl" />
@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="quickcrew-wave quickcrew-wave-one" />
       <div className="quickcrew-wave quickcrew-wave-two" />
 
-      <Container className="relative z-10 grid min-h-[92vh] items-center gap-14 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
+      <Container className="relative z-10 grid items-center gap-14 lg:grid-cols-[1fr_1fr] lg:gap-20">
         <div className="max-w-2xl">
           <span className="inline-flex rounded-full border border-[#22B8C4]/20 bg-white/70 px-4 py-1.5 text-sm font-medium text-[#148A94] backdrop-blur">
             Built for hospitality teams in New Zealand
@@ -60,6 +60,9 @@ export default function Hero() {
 
         <div className="relative flex items-center justify-center lg:justify-end">
           <div className="relative h-[420px] w-full max-w-[340px] sm:h-[520px] sm:max-w-[420px] lg:h-[620px] lg:max-w-[560px]">
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="h-[320px] w-[320px] rounded-full bg-[#22B8C4]/25 blur-[120px]" />
+            </div>
             <div className="quickcrew-float absolute left-0 top-16 z-20 w-[150px] sm:w-[210px] lg:w-[270px]">
               <div className="rounded-[2rem] border border-white/50 bg-white/70 p-3 shadow-[0_20px_60px_rgba(34,184,196,0.18)] backdrop-blur-xl">
                 <Image

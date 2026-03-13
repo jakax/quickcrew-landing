@@ -3,7 +3,7 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import TrustBar from "@/components/sections/TrustBar";
 import HowItWorks from "@/components/sections/HowItWorks";
-import ProductPreview from "@/components/sections/ProductPreview";
+import ProductPreview2 from "@/components/sections/ProductPreview2";
 import AudienceSplit from "@/components/sections/AudienceSplit";
 import FeatureGrid from "@/components/sections/FeatureGrid";
 import FounderStory from "@/components/sections/FounderStory";
@@ -19,7 +19,7 @@ export default function HomePage() {
         <Hero />
         <TrustBar />
         <HowItWorks />
-        <ProductPreview />
+        <ProductPreview2 />
         <AudienceSplit />
         <FeatureGrid />
         <FounderStory />
