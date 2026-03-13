@@ -2,25 +2,157 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #09090b;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.quickcrew-hero-bg {
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.95), transparent 32%),
+    radial-gradient(circle at top right, rgba(71, 184, 114, 0.12), transparent 26%),
+    linear-gradient(180deg, #f7feff 0%, #eaf9fb 18%, #d6f2f5 44%, #b5e7ec 70%, #8ad8e1 100%);
+}
+
+.quickcrew-wave {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.quickcrew-wave-one {
+  bottom: 120px;
+  height: 180px;
+  opacity: 0.3;
+  background:
+    radial-gradient(60% 140px at 20% 100%, rgba(255, 255, 255, 0.9) 0%, transparent 70%),
+    radial-gradient(55% 140px at 70% 100%, rgba(255, 255, 255, 0.7) 0%, transparent 70%);
+}
+
+.quickcrew-wave-two {
+  bottom: 0;
+  height: 220px;
+  opacity: 0.5;
+  background:
+    radial-gradient(55% 170px at 15% 100%, rgba(255, 255, 255, 0.95) 0%, transparent 70%),
+    radial-gradient(55% 170px at 85% 100%, rgba(255, 255, 255, 0.78) 0%, transparent 70%);
+}
+
+.quickcrew-float {
+  animation: quickcrewFloat 6s ease-in-out infinite;
+}
+
+.quickcrew-float-delayed {
+  animation: quickcrewFloat 7.2s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+@keyframes quickcrewFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.quickcrew-section-soft {
+  position: relative;
+  overflow: hidden;
+}
+
+.quickcrew-section-soft::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at top right, rgba(34, 184, 196, 0.08), transparent 22%),
+    radial-gradient(circle at bottom left, rgba(71, 184, 114, 0.06), transparent 20%);
+}
+
+.quickcrew-card {
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease;
+}
+
+.quickcrew-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(34, 184, 196, 0.12);
+}
+
+.quickcrew-button-lift {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    opacity 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.quickcrew-button-lift:hover {
+  transform: translateY(-2px);
+}
+
+.quickcrew-fade-up {
+  animation: quickcrewFadeUp 0.7s ease both;
+}
+
+@keyframes quickcrewFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quickcrew-reveal {
+  opacity: 0;
+  transform: translate3d(0, 36px, 0);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+  will-change: opacity, transform;
+}
+
+.quickcrew-reveal.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quickcrew-reveal,
+  .quickcrew-reveal.visible,
+  .quickcrew-float,
+  .quickcrew-float-delayed,
+  .quickcrew-card,
+  .quickcrew-button-lift {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+.quickcrew-button-lift:hover {
+  transform: translateY(-2px) scale(1.01);
 }
